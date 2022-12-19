@@ -51,5 +51,12 @@ public class HelloRestController {
 
     }
 
+    //UC5- Passing firstName in PathVariable and lastName in Query Parameter
+    @RequestMapping(value = "/path2/{firstName}",method = RequestMethod.PUT)
+    public String detail(@PathVariable("firstName")String firstName,@RequestParam(value = "lastName")String lastName){
+        return "hello "+firstName +" "+lastName +" From BridgeLabz";
+    }
+
+
 }
 
