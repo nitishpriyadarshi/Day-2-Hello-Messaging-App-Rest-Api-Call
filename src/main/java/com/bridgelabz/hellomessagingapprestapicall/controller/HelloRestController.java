@@ -1,6 +1,9 @@
-package com.bridgelabz.hellomessagingapprestapicall;
+package com.bridgelabz.hellomessagingapprestapicall.controller;
 
 
+
+import com.bridgelabz.hellomessagingapprestapicall.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +43,13 @@ public class HelloRestController {
         return "This is My UserID " + userId;
     }
 
+
+    //UC-4 Pass FirstName and LastName In Body
+    @RequestMapping(value = "/post",method = RequestMethod.POST)
+    public String details(@RequestBody User user){
+        return "Hello "+user.getFirstName()+" "+user.getLastName();
+
+    }
 
 }
 
